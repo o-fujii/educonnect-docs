@@ -2,6 +2,14 @@
 
 EduConnectの企画資料共有用リポジトリです。
 
+## 共有URL一覧
+
+- URL一覧ドキュメント：`URLS.md`
+- トップページ：https://o-fujii.github.io/educonnect-docs/
+- Ver1：https://o-fujii.github.io/educonnect-docs/ver1/
+- Ver2：https://o-fujii.github.io/educonnect-docs/ver2/
+- 比較ページ：https://o-fujii.github.io/educonnect-docs/versions.html
+
 ## ページ構成
 
 - トップページ：/
