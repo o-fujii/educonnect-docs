@@ -5,12 +5,14 @@ EduConnectの企画資料共有用リポジトリです。
 ## 公開ページ
 
 - トップページ: https://o-fujii.github.io/educonnect-docs/
+- Ver0: https://o-fujii.github.io/educonnect-docs/ver0/
 - Ver1: https://o-fujii.github.io/educonnect-docs/ver1/
 - Ver2: https://o-fujii.github.io/educonnect-docs/ver2/
 - 比較ページ: https://o-fujii.github.io/educonnect-docs/versions.html
 
 ## バージョン説明
 
+- Ver0：スタート原案
 - Ver1：初期構想・フル機能版
 - Ver2：スモールスタート・超MVP版
 

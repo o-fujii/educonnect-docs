@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduConnect スタート原案 Ver0</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F7F5F0;
+  --bg2: #EEEAE2;
+  --surface: #FFFFFF;
+  --border: #DDD9D0;
+  --text: #1A1814;
+  --text2: #6B6760;
+  --text3: #9B9890;
+  --accent: #1D6A52;
+  --accent2: #2E8B6E;
+  --accent-light: #E6F4EF;
+  --blue: #1D4E89;
+  --blue-light: #E3EDF7;
+  --amber: #B45309;
+  --amber-light: #FEF3C7;
+  --purple: #5B21B6;
+  --purple-light: #EDE9FE;
+  --red: #991B1B;
+  --red-light: #FEE2E2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,240,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--accent);letter-spacing:.02em}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{font-size:11px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.05em;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.page{max-width:980px;margin:0 auto;padding:88px 32px 80px}
+.hero{background:linear-gradient(135deg,#0F3D2E 0%,#1D6A52 54%,#2E8B6E 100%);color:white;padding:68px 56px;border-radius:20px;margin-bottom:56px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.hero-tag{font-size:11px;letter-spacing:.15em;font-weight:500;color:rgba(255,255,255,0.62);margin-bottom:16px}
+.hero h1{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.18;margin-bottom:14px;font-weight:400}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:28px;max-width:670px}
+.hero-flow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.flow-pill{font-size:12px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:5px 11px;color:rgba(255,255,255,0.9)}
+.hero-meta{display:flex;gap:32px;flex-wrap:wrap}
+.hero-meta-label{font-size:11px;color:rgba(255,255,255,0.52);letter-spacing:.08em;margin-bottom:3px}
+.hero-meta-val{font-size:14px;font-weight:500}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.section-num{font-family:'DM Serif Display',serif;font-size:34px;color:var(--border);line-height:1}
+.section-title{font-size:19px;font-weight:700;color:var(--text)}
+.section-desc{color:var(--text2);font-size:13px;margin-bottom:20px;line-height:1.8}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+.card-title{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--text2)}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:500;letter-spacing:.03em;white-space:nowrap}
+.b-must{background:var(--accent-light);color:var(--accent)}
+.b-phase2{background:var(--purple-light);color:var(--purple)}
+.b-later{background:var(--bg2);color:var(--text2)}
+.b-pm{background:var(--amber-light);color:var(--amber)}
+.b-stop{background:var(--red-light);color:var(--red)}
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+thead th{background:var(--text);color:white;padding:10px 16px;text-align:left;font-size:12px;font-weight:500;letter-spacing:.04em}
+tbody td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--bg)}
+td:first-child{color:var(--text);font-weight:500}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.plan{border-radius:12px;padding:18px;border:2px solid var(--border);background:var(--surface)}
+.plan.featured{border-color:var(--accent);box-shadow:0 4px 20px rgba(29,106,82,0.12)}
+.plan-tag{font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:4px}
+.plan-name{font-size:14px;font-weight:700;margin-bottom:4px}
+.plan-price{font-family:'DM Serif Display',serif;font-size:28px;margin:6px 0 2px;color:var(--accent)}
+.plan-period{font-size:11px;color:var(--text3);margin-bottom:12px}
+.plan-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px;position:relative;margin-bottom:1px}
+.plan-item::before{position:absolute;left:0;font-weight:700}
+.plan-item.o::before{content:"+";color:var(--accent)}
+.plan-item.x::before{content:"-";color:var(--red)}
+.tip{background:var(--accent-light);border-left:3px solid var(--accent);padding:14px 16px;border-radius:8px;color:var(--text2);font-size:13px}
+.tip-amber{background:var(--amber-light);border-left-color:var(--amber)}
+.tip-red{background:var(--red-light);border-left-color:var(--red)}
+.rank-card{display:flex;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.rank-icon{width:34px;height:34px;border-radius:50%;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.rank-title{font-size:13px;font-weight:700;margin-bottom:4px}
+.rank-desc{font-size:12px;color:var(--text2)}
+.phase-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}
+.phase-label{font-size:10px;letter-spacing:.1em;font-weight:700;color:var(--text3);margin-bottom:4px}
+.phase-period{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px}
+.phase-num{font-family:'DM Serif Display',serif;font-size:26px;color:var(--accent);line-height:1.1}
+.phase-sub{font-size:11px;color:var(--text3);margin-bottom:12px}
+.phase-item{font-size:12px;color:var(--text2);margin-bottom:4px}
+.pm-item{display:flex;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.pm-badge{width:88px;flex-shrink:0}
+.pm-title{font-size:13px;font-weight:700;margin-bottom:3px}
+.pm-desc{font-size:12px;color:var(--text2)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.b-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px;position:relative;margin-bottom:2px}
+.b-item::before{content:"·";position:absolute;left:2px}
+.b-item.good::before{content:"+";color:var(--accent);font-weight:700}
+.b-item.stop::before{content:"-";color:var(--red);font-weight:700}
+.mini-label{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.08em;margin-bottom:8px}
+footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--text3);font-size:12px}
+@media(max-width:680px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .page{padding:72px 16px 60px}
+  .hero{padding:36px 24px}
+  .hero h1{font-size:28px}
+  .hero-meta{gap:20px}
+  .grid2,.grid3,.grid4,.two-col{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">EduConnect</div>
+  <div class="nav-links">
+    <a href="#overview">概要</a>
+    <a href="#mvp">作るもの</a>
+    <a href="#notnow">後回し</a>
+    <a href="#ai">AI</a>
+    <a href="#ranking">ランキング</a>
+    <a href="#kpi">KPI</a>
+    <a href="#roadmap">ロードマップ</a>
+    <a href="#roles">役割</a>
+    <a href="#phase2">拡張</a>
+    <a href="#pm">PM決定</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-tag">CONFIDENTIAL — INTERNAL USE ONLY ver.4.0</div>
+    <h1>EduConnect<br>スタート原案 Ver0</h1>
+    <div class="hero-sub">弁護士ドットコムの教育版。ただし初期は個人講師向けQ&amp;Aから開始し、「匿名質問 → 講師回答 → 講師プロフィール閲覧 → 問い合わせ」の流れだけを検証する。</div>
+    <div class="hero-flow">
+      <div class="flow-pill">匿名質問</div>
+      <div class="flow-pill">講師回答</div>
+      <div class="flow-pill">プロフィール閲覧</div>
+      <div class="flow-pill">問い合わせ</div>
+    </div>
+    <div class="hero-meta">
+      <div><div class="hero-meta-label">初期対象</div><div class="hero-meta-val">個人講師のみ</div></div>
+      <div><div class="hero-meta-label">最優先検証</div><div class="hero-meta-val">Q&amp;Aが成立するか</div></div>
+      <div><div class="hero-meta-label">初期課金</div><div class="hero-meta-val">無料運用</div></div>
+      <div><div class="hero-meta-label">後から追加</div><div class="hero-meta-val">教室・決済・SNS・ツール</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="overview">
+    <div class="section-header"><div class="section-num">01</div><div class="section-title">サービス概要</div></div>
+    <div class="section-desc">大きな事業計画から始めるのではなく、まずは「質問に対して講師が良い回答を返し、それが問い合わせにつながるか」を検証する。</div>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><td>コンセプト</td><td>生徒・保護者が匿名で勉強相談を投稿し、登録講師が回答するQ&amp;A起点の講師検索サイト</td></tr>
+          <tr><td>見える価値</td><td>回答内容を通じて、講師の人柄・専門性・説明力が見える</td></tr>
+          <tr><td>問い合わせ導線</td><td>気になる講師のプロフィールを閲覧し、問い合わせフォームから連絡できる</td></tr>
+          <tr><td>SEO資産</td><td>Q&amp;Aは検索可能なコンテンツとして蓄積し、タグ別ページの土台にする</td></tr>
+          <tr><td>初期対象</td><td>個人講師のみ。教室アカウントはPhase2以降</td></tr>
+          <tr><td>初期リリース</td><td>無料運用。ユーザー数とQ&amp;A数を増やし、価値検証を優先する</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="mvp">
+    <div class="section-header"><div class="section-num">02</div><div class="section-title">超MVPで作るもの</div></div>
+    <div class="section-desc">最初に必要なのは、講師検索サイトの完成形ではなく、Q&amp;Aが成立する最小構成。画面・DB・AI処理は後から拡張できる粒度で作る。</div>
+    <div class="grid2">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div class="card-title" style="color:var(--blue)">生徒・保護者側</div>
+        <div class="b-item good">匿名質問投稿</div>
+        <div class="b-item good">質問一覧</div>
+        <div class="b-item good">質問詳細</div>
+        <div class="b-item good">講師回答の閲覧</div>
+        <div class="b-item good">講師プロフィール閲覧</div>
+        <div class="b-item good">問い合わせフォーム</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div class="card-title" style="color:var(--accent)">講師側</div>
+        <div class="b-item good">講師登録</div>
+        <div class="b-item good">講師プロフィール</div>
+        <div class="b-item good">回答投稿</div>
+        <div class="b-item good">いいね数の表示</div>
+        <div class="b-item good">回答数の表示</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--purple)">
+        <div class="card-title" style="color:var(--purple)">AI・SEO</div>
+        <div class="b-item good">AIタグ自動生成</div>
+        <div class="b-item good">SEOタイトル自動生成</div>
+        <div class="b-item good">AI要約</div>
+        <div class="b-item good">関連質問表示</div>
+        <div class="b-item good">タグ別ページの基礎設計</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--amber)">
+        <div class="card-title" style="color:var(--amber)">管理者側</div>
+        <div class="b-item good">質問管理</div>
+        <div class="b-item good">回答管理</div>
+        <div class="b-item good">講師承認</div>
+        <div class="b-item good">通報確認</div>
+        <div class="b-item good">AI Seed質問の管理</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="notnow">
+    <div class="section-header"><div class="section-num">03</div><div class="section-title">初期では作らないもの</div></div>
+    <div class="section-desc">初期開発では作らない範囲を明確にし、Q&amp;A価値検証に開発リソースを集中する。ただし将来的に追加できるよう、DB設計だけは拡張性を意識する。</div>
+    <div class="grid3">
+      <div class="card">
+        <div class="card-title">教室・契約まわり</div>
+        <div class="b-item stop">教室アカウント</div>
+        <div class="b-item stop">教室への所属申請・承認</div>
+        <div class="b-item stop">Stripe決済</div>
+        <div class="b-item stop">有料プラン</div>
+        <div class="b-item stop">チャット</div>
+        <div class="b-item stop">授業予約</div>
+      </div>
+      <div class="card">
+        <div class="card-title">SNS・メディア運用</div>
+        <div class="b-item stop">X自動投稿</div>
+        <div class="b-item stop">Instagram画像生成</div>
+        <div class="b-item stop">コラム自動生成</div>
+        <div class="b-item stop">大手協賛企業向け機能</div>
+      </div>
+      <div class="card">
+        <div class="card-title">便利機能・複雑な評価</div>
+        <div class="b-item stop">便利ツール群</div>
+        <div class="b-item stop">年間ランキング</div>
+        <div class="b-item stop">複雑なバッジ制度</div>
+        <div class="b-item stop">週間・都道府県別・急上昇ランキング</div>
+      </div>
+    </div>
+    <div class="tip tip-amber" style="margin-top:12px"><b>設計方針：</b>実装はしないが、users / teachers / questions / answers / tags の設計は、将来 organizations（教室）や subscriptions（課金）を追加できる余地を残す。</div>
+  </div>
+
+  <div class="section" id="ai">
+    <div class="section-header"><div class="section-num">04</div><div class="section-title">AI活用はSEOと運用補助に絞る</div></div>
+    <div class="section-desc">初期MVPのAIは、派手な自動投稿や記事生成ではなく、Q&amp;Aを見つけやすく、読みやすく、管理しやすくする用途に限定する。</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>機能</th><th>初期での使い方</th><th>優先度</th><th>担当</th></tr></thead>
+        <tbody>
+          <tr><td>AIタグ生成</td><td>質問本文から科目・学年・単元・難易度・悩み種別を提案する</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
+          <tr><td>SEOタイトル生成</td><td>質問詳細ページとタグ別ページに使う検索向けタイトルを生成する</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
+          <tr><td>AI要約</td><td>質問内容と回答の要点を短く整理し、一覧・管理画面で確認しやすくする</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
+          <tr><td>AI Seed質問作成</td><td>初期の空っぽ感を避けるため、カテゴリ別にSeed質問を作成・管理する</td><td><span class="badge b-must">超MVP</span></td><td>B + PM</td></tr>
+          <tr><td>関連質問候補生成</td><td>タグと本文類似度から関連質問の候補を出す。初期は簡易ロジックでよい</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
+          <tr><td>X自動投稿・Instagram・コラム自動生成</td><td>Q&amp;A成立後に検討する拡張機能。初期には入れない</td><td><span class="badge b-phase2">Phase2以降</span></td><td>B</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="pricing">
+    <div class="section-header"><div class="section-num">05</div><div class="section-title">料金プランは初期では作らない</div></div>
+    <div class="tip">
+      <b>初期リリースは無料運用。</b>最初はユーザー数とQ&amp;A数を増やすことが最優先。課金導線を入れると決済・権限・サポート・規約が重くなるため、先にQ&amp;Aの価値検証を行う。
+    </div>
+    <div class="grid3" style="margin-top:16px">
+      <div class="phase-card"><div class="phase-label">NOW</div><div class="phase-period">初期</div><div class="phase-num">¥0</div><div class="phase-sub">無料運用</div><div class="phase-item">講師登録無料</div><div class="phase-item">質問投稿無料</div><div class="phase-item">問い合わせ無料</div></div>
+      <div class="phase-card"><div class="phase-label">AFTER VALIDATION</div><div class="phase-period">価値検証後</div><div class="phase-num">検討</div><div class="phase-sub">課金設計</div><div class="phase-item">講師向け有料枠</div><div class="phase-item">教室アカウント</div><div class="phase-item">決済・請求</div></div>
+      <div class="phase-card"><div class="phase-label">FUTURE</div><div class="phase-period">将来構想</div><div class="phase-num">拡張</div><div class="phase-sub">収益化</div><div class="phase-item">ツール課金</div><div class="phase-item">協賛企業</div><div class="phase-item">法人向け機能</div></div>
+    </div>
+  </div>
+
+  <div class="section" id="ranking">
+    <div class="section-header"><div class="section-num">06</div><div class="section-title">ランキング設計は簡略化する</div></div>
+    <div class="section-desc">初期ランキングは講師の参加モチベーションとプロフィール閲覧導線を作るための最低限にする。複雑な称号・バッジは作らない。</div>
+    <div class="grid2">
+      <div>
+        <div class="rank-card"><div class="rank-icon">1</div><div><div class="rank-title">回答数ランキング</div><div class="rank-desc">回答投稿数で集計。初期の参加量を可視化する。</div></div></div>
+        <div class="rank-card"><div class="rank-icon">2</div><div><div class="rank-title">いいね数ランキング</div><div class="rank-desc">ユーザー反応が多い回答を持つ講師を見つけやすくする。</div></div></div>
+      </div>
+      <div>
+        <div class="rank-card"><div class="rank-icon">3</div><div><div class="rank-title">ベストアンサー数ランキング</div><div class="rank-desc">説明力・納得感の高い講師を評価する。</div></div></div>
+        <div class="rank-card"><div class="rank-icon">4</div><div><div class="rank-title">月間ランキング</div><div class="rank-desc">初期講師が継続参加しやすいよう、月単位でリセットする。</div></div></div>
+      </div>
+    </div>
+    <div class="tip tip-amber" style="margin-top:12px"><b>Phase2以降：</b>年間・週間・都道府県別・急上昇・バッジ制度は、Q&amp;A数と講師数が増えてから追加する。</div>
+  </div>
+
+  <div class="section" id="kpi">
+    <div class="section-header"><div class="section-num">07</div><div class="section-title">最初に検証するKPI</div></div>
+    <div class="section-desc">「作れたか」ではなく、「Q&amp;Aが成立し、講師プロフィールと問い合わせに流れるか」を見る。</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>KPI</th><th>初期目標</th><th>見る理由</th></tr></thead>
+        <tbody>
+          <tr><td>講師登録数</td><td>20名</td><td>回答者の初期供給を確保できるか</td></tr>
+          <tr><td>Seed質問数</td><td>100件</td><td>初期コンテンツの空白を埋められるか</td></tr>
+          <tr><td>実ユーザー質問数</td><td>50件</td><td>匿名相談の投稿ハードルが低いか</td></tr>
+          <tr><td>回答数</td><td>300件</td><td>講師が継続的に回答するか</td></tr>
+          <tr><td>1質問あたり平均回答数</td><td>2件以上</td><td>Q&amp;Aとして比較・選択が成立するか</td></tr>
+          <tr><td>講師プロフィール閲覧率</td><td>継続計測</td><td>回答から講師理解につながるか</td></tr>
+          <tr><td>問い合わせ送信数</td><td>継続計測</td><td>最終的なマッチング意向があるか</td></tr>
+          <tr><td>Google検索流入数</td><td>継続計測</td><td>Q&amp;AがSEO資産になり始めるか</td></tr>
+          <tr><td>タグ別ページの閲覧数</td><td>継続計測</td><td>タグ設計が回遊と検索流入に効くか</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="roadmap">
+    <div class="section-header"><div class="section-num">08</div><div class="section-title">ロードマップ</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>フェーズ</th><th>期間</th><th>目的</th><th>主な内容</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 0：準備</td><td>2週間</td><td>作る前に迷いを減らす</td><td>タグマスタ設計 / DB設計 / 画面一覧確定 / AIタグ生成PoC / 講師プロフィール項目確定</td></tr>
+          <tr><td>Phase 0.5：超MVP</td><td>1〜1.5ヶ月</td><td>Q&amp;A成立の最小導線を作る</td><td>匿名質問投稿 / 質問一覧 / 質問詳細 / 講師回答 / 講師プロフィール / AIタグ / SEOタイトル / 管理者確認画面</td></tr>
+          <tr><td>Phase 1：クローズドβ</td><td>2〜3ヶ月</td><td>実データで価値検証する</td><td>登録講師20名 / Seed質問100件 / 実ユーザー質問50件 / 回答300件 / 問い合わせ導線 / 簡易ランキング / SEO改善</td></tr>
+          <tr><td>Phase 2：正式公開</td><td>検証後</td><td>勝ち筋が見えた機能を拡張する</td><td>教室アカウント / 決済 / チャット / SNS自動投稿 / コラム / 便利ツール群 / 詳細ランキング</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="roles">
+    <div class="section-header"><div class="section-num">09</div><div class="section-title">エンジニア役割分担</div></div>
+    <div class="two-col">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div class="card-title" style="color:var(--blue)">エンジニアA：フロント/UI責任者</div>
+        <div class="plan-item o">質問投稿画面</div>
+        <div class="plan-item o">質問一覧</div>
+        <div class="plan-item o">質問詳細</div>
+        <div class="plan-item o">回答表示</div>
+        <div class="plan-item o">講師プロフィール</div>
+        <div class="plan-item o">管理画面の簡易UI</div>
+        <div class="plan-item o">スマホ最適化</div>
+        <div class="plan-item o">SEO表示テンプレート</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--purple)">
+        <div class="card-title" style="color:var(--purple)">エンジニアB：バックエンド/AI責任者</div>
+        <div class="plan-item o">DB設計</div>
+        <div class="plan-item o">Firebase Auth</div>
+        <div class="plan-item o">Firestore</div>
+        <div class="plan-item o">Cloud Functions</div>
+        <div class="plan-item o">AIタグ生成</div>
+        <div class="plan-item o">SEOタイトル生成</div>
+        <div class="plan-item o">Seed質問生成</div>
+        <div class="plan-item o">通報・承認処理</div>
+        <div class="plan-item o">将来の教室機能を見越したデータ設計</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="phase2">
+    <div class="section-header"><div class="section-num">10</div><div class="section-title">Phase2以降の拡張構想</div></div>
+    <div class="section-desc">初期は個人講師のみで始める。教室アカウント構造は、Q&amp;Aと問い合わせの勝ち筋が見えた後に追加する。</div>
+    <div class="grid2">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div class="card-title" style="color:var(--blue)">教室アカウント</div>
+        <div class="b-item good">教室ページ</div>
+        <div class="b-item good">所属講師一覧</div>
+        <div class="b-item good">所属申請・承認</div>
+        <div class="b-item good">教室への問い合わせ集約</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div class="card-title" style="color:var(--accent)">収益化・運用拡張</div>
+        <div class="b-item good">Stripe決済</div>
+        <div class="b-item good">有料プラン</div>
+        <div class="b-item good">SNS自動投稿</div>
+        <div class="b-item good">コラム</div>
+        <div class="b-item good">便利ツール群</div>
+      </div>
+    </div>
+    <div class="tip" style="margin-top:12px"><b>DB設計の注意：</b>初期では organizations を実装しないが、teacher に organizationId を後付けできる設計、問い合わせの宛先を teacher / organization に分岐できる設計は意識しておく。</div>
+  </div>
+
+  <div class="section" id="stack">
+    <div class="section-header"><div class="section-num">11</div><div class="section-title">技術スタック</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>カテゴリ</th><th>採用技術</th><th>初期での用途</th></tr></thead>
+        <tbody>
+          <tr><td>フロントエンド</td><td>Next.js / React</td><td>質問・回答・講師プロフィール・管理画面のUI。SEO表示テンプレートも担当</td></tr>
+          <tr><td>認証</td><td>Firebase Authentication</td><td>講師・管理者ログイン。生徒は匿名投稿から開始</td></tr>
+          <tr><td>データベース</td><td>Firestore</td><td>questions / answers / teachers / tags / reports / inquiries を管理</td></tr>
+          <tr><td>バックエンド</td><td>Cloud Functions</td><td>AI処理、承認、通報、問い合わせ通知、SEO情報生成</td></tr>
+          <tr><td>AI</td><td>Vertex AI（Gemini）</td><td>タグ生成、SEOタイトル生成、要約、Seed質問、関連質問候補</td></tr>
+          <tr><td>ホスティング</td><td>Firebase Hosting</td><td>初期公開・クローズドβ運用</td></tr>
+          <tr><td>決済</td><td>Stripe</td><td>初期では未実装。Phase2以降</td></tr>
+          <tr><td>SNS連携</td><td>X API / Instagram API</td><td>初期では未実装。Phase2以降</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="pm">
+    <div class="section-header"><div class="section-num">12</div><div class="section-title">PMが次に決めること</div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">初期カテゴリを何に絞るか</div><div class="pm-desc">最初から全科目に広げず、回答者を集めやすいカテゴリに絞る。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">タグマスタ</div><div class="pm-desc">科目・学年・単元・難易度・悩み種別の階層を決める。AIタグ生成とSEOに直結する。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">講師プロフィール項目</div><div class="pm-desc">専門科目、指導経験、料金目安、対応地域、オンライン可否、自己紹介などの必須項目を決める。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">質問投稿フォームの入力項目</div><div class="pm-desc">匿名性を守りつつ、講師が回答しやすい情報量にする。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">AI Seed質問の作成ルール</div><div class="pm-desc">実在生徒に見える表現、カテゴリの偏り、AI生成であることの内部管理ルールを決める。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">講師承認基準</div><div class="pm-desc">本人確認、経歴確認、プロフィール品質、禁止表現をどこまで見るかを決める。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">通報・削除基準</div><div class="pm-desc">不適切投稿、個人情報、誹謗中傷、宣伝行為への対応基準を決める。</div></div></div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--accent);margin-bottom:8px">EduConnect</div>
+  <div>EduConnect スタート原案 Ver0 — スモールスタート検討時点の原案</div>
+</footer>
+</body>
+</html>
