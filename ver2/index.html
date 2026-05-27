@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduConnect スモールスタート開発計画 Ver2</title>
+<title>EduConnect スモールスタート開発計画 Ver2｜超MVP版</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -133,9 +133,9 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
 <div class="page">
 
   <div class="hero">
-    <div class="hero-tag">CONFIDENTIAL — INTERNAL USE ONLY ver.4.0</div>
+    <div class="hero-tag">CONFIDENTIAL — INTERNAL USE ONLY　Ver2</div>
     <h1>EduConnect<br>スモールスタート開発計画 Ver2</h1>
-    <div class="hero-sub">弁護士ドットコムの教育版。ただし初期は個人講師向けQ&amp;Aから開始し、「匿名質問 → 講師回答 → 講師プロフィール閲覧 → 問い合わせ」の流れだけを検証する。</div>
+    <div class="hero-sub">弁護士ドットコムの教育版という方向性は維持する。ただし初期は「個人講師 × 匿名Q&amp;A」に絞り、質問されるか、講師が回答するか、Q&amp;AがSEO資産になるかを検証する。</div>
     <div class="hero-flow">
       <div class="flow-pill">匿名質問</div>
       <div class="flow-pill">講師回答</div>
@@ -144,9 +144,9 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
     </div>
     <div class="hero-meta">
       <div><div class="hero-meta-label">初期対象</div><div class="hero-meta-val">個人講師のみ</div></div>
-      <div><div class="hero-meta-label">最優先検証</div><div class="hero-meta-val">Q&amp;Aが成立するか</div></div>
+      <div><div class="hero-meta-label">最優先検証</div><div class="hero-meta-val">質問・回答・SEO</div></div>
       <div><div class="hero-meta-label">初期課金</div><div class="hero-meta-val">無料運用</div></div>
-      <div><div class="hero-meta-label">後から追加</div><div class="hero-meta-val">教室・決済・SNS・ツール</div></div>
+      <div><div class="hero-meta-label">Phase2以降</div><div class="hero-meta-val">教室・決済・SNS・ツール</div></div>
     </div>
   </div>
 
@@ -185,16 +185,18 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
         <div class="b-item good">講師登録</div>
         <div class="b-item good">講師プロフィール</div>
         <div class="b-item good">回答投稿</div>
-        <div class="b-item good">いいね数の表示</div>
-        <div class="b-item good">回答数の表示</div>
+        <div class="b-item good">回答数表示</div>
+        <div class="b-item good">いいね数表示</div>
+        <div class="b-item good">ベストアンサー数表示</div>
       </div>
       <div class="card" style="border-left:3px solid var(--purple)">
         <div class="card-title" style="color:var(--purple)">AI・SEO</div>
         <div class="b-item good">AIタグ自動生成</div>
         <div class="b-item good">SEOタイトル自動生成</div>
         <div class="b-item good">AI要約</div>
-        <div class="b-item good">関連質問表示</div>
+        <div class="b-item good">関連質問候補</div>
         <div class="b-item good">タグ別ページの基礎設計</div>
+        <div class="b-item good">AI Seed質問の作成・管理</div>
       </div>
       <div class="card" style="border-left:3px solid var(--amber)">
         <div class="card-title" style="color:var(--amber)">管理者側</div>
@@ -202,7 +204,8 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
         <div class="b-item good">回答管理</div>
         <div class="b-item good">講師承認</div>
         <div class="b-item good">通報確認</div>
-        <div class="b-item good">AI Seed質問の管理</div>
+        <div class="b-item good">NGワード管理</div>
+        <div class="b-item good">AI Seed質問管理</div>
       </div>
     </div>
   </div>
@@ -231,8 +234,10 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
         <div class="card-title">便利機能・複雑な評価</div>
         <div class="b-item stop">便利ツール群</div>
         <div class="b-item stop">年間ランキング</div>
+        <div class="b-item stop">週間ランキング</div>
+        <div class="b-item stop">都道府県ランキング</div>
         <div class="b-item stop">複雑なバッジ制度</div>
-        <div class="b-item stop">週間・都道府県別・急上昇ランキング</div>
+        <div class="b-item stop">急上昇ランキング</div>
       </div>
     </div>
     <div class="tip tip-amber" style="margin-top:12px"><b>設計方針：</b>実装はしないが、users / teachers / questions / answers / tags の設計は、将来 organizations（教室）や subscriptions（課金）を追加できる余地を残す。</div>
@@ -250,7 +255,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
           <tr><td>AI要約</td><td>質問内容と回答の要点を短く整理し、一覧・管理画面で確認しやすくする</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
           <tr><td>AI Seed質問作成</td><td>初期の空っぽ感を避けるため、カテゴリ別にSeed質問を作成・管理する</td><td><span class="badge b-must">超MVP</span></td><td>B + PM</td></tr>
           <tr><td>関連質問候補生成</td><td>タグと本文類似度から関連質問の候補を出す。初期は簡易ロジックでよい</td><td><span class="badge b-must">超MVP</span></td><td>B</td></tr>
-          <tr><td>X自動投稿・Instagram・コラム自動生成</td><td>Q&amp;A成立後に検討する拡張機能。初期には入れない</td><td><span class="badge b-phase2">Phase2以降</span></td><td>B</td></tr>
+          <tr><td>X自動投稿・Instagram図解カード・コラム自動生成・SNS素材自動配布</td><td>Q&amp;A成立後に検討する拡張機能。初期には入れない</td><td><span class="badge b-phase2">Phase2以降</span></td><td>B</td></tr>
         </tbody>
       </table>
     </div>
@@ -312,7 +317,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
         <thead><tr><th>フェーズ</th><th>期間</th><th>目的</th><th>主な内容</th></tr></thead>
         <tbody>
           <tr><td>Phase 0：準備</td><td>2週間</td><td>作る前に迷いを減らす</td><td>タグマスタ設計 / DB設計 / 画面一覧確定 / AIタグ生成PoC / 講師プロフィール項目確定</td></tr>
-          <tr><td>Phase 0.5：超MVP</td><td>1〜1.5ヶ月</td><td>Q&amp;A成立の最小導線を作る</td><td>匿名質問投稿 / 質問一覧 / 質問詳細 / 講師回答 / 講師プロフィール / AIタグ / SEOタイトル / 管理者確認画面</td></tr>
+          <tr><td>Phase 0.5：超MVP</td><td>1〜1.5ヶ月</td><td>Q&amp;A成立の最小導線を作る</td><td>匿名質問投稿 / 質問一覧 / 質問詳細 / 講師回答 / 講師プロフィール / AIタグ / SEOタイトル / AI要約 / 管理者確認画面</td></tr>
           <tr><td>Phase 1：クローズドβ</td><td>2〜3ヶ月</td><td>実データで価値検証する</td><td>登録講師20名 / Seed質問100件 / 実ユーザー質問50件 / 回答300件 / 問い合わせ導線 / 簡易ランキング / SEO改善</td></tr>
           <tr><td>Phase 2：正式公開</td><td>検証後</td><td>勝ち筋が見えた機能を拡張する</td><td>教室アカウント / 決済 / チャット / SNS自動投稿 / コラム / 便利ツール群 / 詳細ランキング</td></tr>
         </tbody>
@@ -342,6 +347,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:v
         <div class="plan-item o">Cloud Functions</div>
         <div class="plan-item o">AIタグ生成</div>
         <div class="plan-item o">SEOタイトル生成</div>
+        <div class="plan-item o">AI要約</div>
         <div class="plan-item o">Seed質問生成</div>
         <div class="plan-item o">通報・承認処理</div>
         <div class="plan-item o">将来の教室機能を見越したデータ設計</div>

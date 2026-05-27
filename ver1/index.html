@@ -3,107 +3,634 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduConnect 企画資料 Ver1</title>
+<title>EduConnect 企画資料 Ver1｜完成形・フル構想版</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F7F5F0;--bg2:#EEEAE2;--surface:#fff;--border:#DDD9D0;--text:#1A1814;--text2:#6B6760;--text3:#9B9890;--accent:#1D6A52;--blue:#1D4E89;--purple:#5B21B6;--amber:#B45309}
-*{box-sizing:border-box}body{margin:0;font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.75}nav{position:sticky;top:0;background:rgba(247,245,240,.95);border-bottom:1px solid var(--border);padding:14px 28px;z-index:10}.nav-logo{font-family:'DM Serif Display',serif;color:var(--accent);font-size:18px}.page{max-width:980px;margin:0 auto;padding:32px 28px 72px}.hero{background:linear-gradient(135deg,#0F3D2E 0%,#1D6A52 54%,#2E8B6E 100%);color:white;border-radius:20px;padding:64px 52px;margin-bottom:48px}.hero-tag{font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.62);font-weight:700;margin-bottom:14px}.hero h1{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.18;margin:0 0 12px;font-weight:400}.hero-sub{max-width:680px;color:rgba(255,255,255,.78);font-size:15px}.section{margin-bottom:52px}.section-header{display:flex;gap:16px;align-items:baseline;border-bottom:2px solid var(--border);padding-bottom:12px;margin-bottom:18px}.section-num{font-family:'DM Serif Display',serif;font-size:34px;color:var(--border)}.section-title{font-size:19px;font-weight:700}.section-desc{color:var(--text2);font-size:13px;margin-bottom:18px}.card{background:white;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}.card-title{font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px}table{width:100%;border-collapse:collapse;background:white}th{background:var(--text);color:white;text-align:left;padding:10px 16px;font-size:12px}td{padding:10px 16px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}td:first-child{font-weight:700;color:var(--text)}tr:last-child td{border-bottom:none}.badge{display:inline-block;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700}.b-must{background:#E6F4EF;color:var(--accent)}.b-phase2{background:#EDE9FE;color:var(--purple)}.b-later{background:var(--bg2);color:var(--text2)}.b-pm{background:#FEF3C7;color:var(--amber)}.b-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px;position:relative}.b-item:before{content:"+";position:absolute;left:0;color:var(--accent);font-weight:700}.tip{background:#E6F4EF;border-left:3px solid var(--accent);border-radius:8px;padding:14px 16px;color:var(--text2);font-size:13px}.plan{background:white;border:2px solid var(--border);border-radius:12px;padding:18px}.plan.featured{border-color:var(--accent)}.price{font-family:'DM Serif Display',serif;font-size:28px;color:var(--accent)}footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--text3);font-size:12px}@media(max-width:720px){.page{padding:24px 16px 56px}.hero{padding:36px 24px}.hero h1{font-size:28px}.grid2,.grid3{grid-template-columns:1fr}}
+:root {
+  --bg: #F7F5F0;
+  --bg2: #EEEAE2;
+  --surface: #FFFFFF;
+  --border: #DDD9D0;
+  --text: #1A1814;
+  --text2: #6B6760;
+  --text3: #9B9890;
+  --accent: #1D6A52;
+  --accent2: #2E8B6E;
+  --accent-light: #E6F4EF;
+  --blue: #1D4E89;
+  --blue-light: #E3EDF7;
+  --amber: #B45309;
+  --amber-light: #FEF3C7;
+  --purple: #5B21B6;
+  --purple-light: #EDE9FE;
+  --red: #991B1B;
+  --red-light: #FEE2E2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,240,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--accent);letter-spacing:.02em}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{font-size:11px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.05em;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.page{max-width:960px;margin:0 auto;padding:88px 32px 80px}
+.hero{background:linear-gradient(135deg,#0F3D2E 0%,#1D6A52 50%,#2E8B6E 100%);color:white;padding:72px 56px;border-radius:20px;margin-bottom:56px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.hero-tag{font-size:11px;letter-spacing:.15em;font-weight:500;color:rgba(255,255,255,0.6);margin-bottom:16px}
+.hero h1{font-family:'DM Serif Display',serif;font-size:38px;line-height:1.2;margin-bottom:14px;font-weight:400}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:36px;max-width:540px}
+.hero-meta{display:flex;gap:36px;flex-wrap:wrap}
+.hero-meta-label{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:.08em;margin-bottom:3px}
+.hero-meta-val{font-size:14px;font-weight:500}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.section-num{font-family:'DM Serif Display',serif;font-size:34px;color:var(--border);line-height:1}
+.section-title{font-size:19px;font-weight:700;color:var(--text)}
+.section-desc{color:var(--text2);font-size:13px;margin-bottom:20px;line-height:1.7}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+.card-title{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--text2)}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:500;letter-spacing:.03em}
+.b-must{background:var(--accent-light);color:var(--accent)}
+.b-phase2{background:var(--purple-light);color:var(--purple)}
+.b-later{background:var(--bg2);color:var(--text2)}
+.b-pm{background:var(--amber-light);color:var(--amber)}
+.b-done{background:var(--accent-light);color:var(--accent)}
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+thead th{background:var(--text);color:white;padding:10px 16px;text-align:left;font-size:12px;font-weight:500;letter-spacing:.04em}
+tbody td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--bg)}
+td:first-child{color:var(--text);font-weight:500}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.plan{border-radius:12px;padding:18px;border:2px solid var(--border);background:var(--surface)}
+.plan.featured{border-color:var(--accent);box-shadow:0 4px 20px rgba(29,106,82,0.12)}
+.plan-tag{font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:4px}
+.plan-name{font-size:13px;font-weight:700;margin-bottom:4px}
+.plan-price{font-family:'DM Serif Display',serif;font-size:26px;margin:6px 0 2px}
+.plan-period{font-size:11px;color:var(--text3);margin-bottom:12px}
+.p0 .plan-price{color:#888}
+.p1 .plan-price{color:var(--blue)}
+.p2 .plan-price{color:var(--accent)}
+.p3 .plan-price{color:var(--purple)}
+.p4 .plan-price{color:var(--amber)}
+.plan-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:16px;position:relative;margin-bottom:1px}
+.plan-item.o::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;font-size:11px;top:3px}
+.plan-item.x::before{content:"×";position:absolute;left:0;color:#CCC;font-size:11px;top:2px}
+.plan-limit{background:var(--amber-light);color:var(--amber);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:500;display:inline;margin-left:4px}
+.tip{border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0;font-size:12px;color:var(--text2);line-height:1.7;background:var(--accent-light)}
+.tip b{color:var(--accent)}
+.tip-amber{border-left-color:var(--amber);background:var(--amber-light)}
+.tip-amber b{color:var(--amber)}
+.tip-blue{border-left-color:var(--blue);background:var(--blue-light)}
+.tip-blue b{color:var(--blue)}
+.tip-red{border-left-color:var(--red);background:var(--red-light)}
+.tip-red b{color:var(--red)}
+.phase-card{border-radius:12px;padding:18px;border:2px solid}
+.ph0{border-color:#CCC;background:#FAFAFA}
+.ph1{border-color:var(--blue);background:var(--blue-light)}
+.ph2{border-color:var(--accent);background:var(--accent-light)}
+.ph3{border-color:var(--purple);background:var(--purple-light)}
+.phase-label{font-size:11px;font-weight:700;letter-spacing:.1em;margin-bottom:4px}
+.ph0 .phase-label{color:#888}
+.ph1 .phase-label{color:var(--blue)}
+.ph2 .phase-label{color:var(--accent)}
+.ph3 .phase-label{color:var(--purple)}
+.phase-period{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px}
+.phase-num{font-family:'DM Serif Display',serif;font-size:26px;margin-bottom:2px}
+.ph0 .phase-num{color:#888}
+.ph1 .phase-num{color:var(--blue)}
+.ph2 .phase-num{color:var(--accent)}
+.ph3 .phase-num{color:var(--purple)}
+.phase-sub{font-size:11px;color:var(--text3);margin-bottom:10px}
+.phase-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:10px;position:relative}
+.phase-item::before{content:"·";position:absolute;left:2px}
+.pm-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:8px;display:flex;gap:14px;align-items:flex-start}
+.pm-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
+.pm-desc{font-size:12px;color:var(--text2);line-height:1.6}
+.rank-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px}
+.rank-icon{font-size:26px;flex-shrink:0}
+.rank-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}
+.rank-desc{font-size:12px;color:var(--text2);line-height:1.6}
+.tool-box{border:1px solid var(--border);border-radius:10px;padding:12px 14px;background:var(--bg);margin-bottom:8px}
+.tool-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px}
+.tool-desc{font-size:11px;color:var(--text3)}
+.tool-tag{display:inline-block;padding:1px 7px;border-radius:8px;font-size:10px;font-weight:500;margin-top:4px}
+.tt-s{background:var(--blue-light);color:var(--blue)}
+.tt-t{background:var(--accent-light);color:var(--accent)}
+.tt-a{background:var(--purple-light);color:var(--purple)}
+.divider{height:1px;background:var(--border);margin:20px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:var(--bg);border-radius:8px;padding:12px 14px}
+.box-title{font-size:11px;font-weight:700;color:var(--text2);margin-bottom:6px}
+.b-item{font-size:12px;color:var(--text2);line-height:1.8;padding-left:12px;position:relative}
+.b-item::before{content:"·";position:absolute;left:2px}
+.b-item.good::before{content:"+";color:var(--accent);font-weight:700}
+footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--text3);font-size:12px}
+@media(max-width:680px){
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .page{padding:72px 16px 60px}
+  .hero{padding:36px 24px}
+  .hero h1{font-size:26px}
+  .hero-meta{gap:20px}
+  .grid2,.grid3,.grid4,.two-col{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<nav><div class="nav-logo">EduConnect Ver1</div></nav>
+<nav>
+  <div class="nav-logo">EduConnect</div>
+  <div class="nav-links">
+    <a href="#overview">概要</a>
+    <a href="#structure">登録構造</a>
+    <a href="#features">機能</a>
+    <a href="#ai">AI活用</a>
+    <a href="#pricing">料金</a>
+    <a href="#ranking">ランキング</a>
+    <a href="#revenue">収益</a>
+    <a href="#roadmap">ロードマップ</a>
+    <a href="#pm">PM確認</a>
+    <a href="#stack">技術</a>
+  </div>
+</nav>
+
 <div class="page">
+
+  <!-- HERO -->
   <div class="hero">
-    <div class="hero-tag">CONFIDENTIAL — INITIAL FULL CONCEPT</div>
+    <div class="hero-tag">CONFIDENTIAL — INTERNAL USE ONLY　Ver1</div>
     <h1>EduConnect<br>企画資料 Ver1</h1>
-    <div class="hero-sub">弁護士ドットコムの教育版。勉強・成績の悩みQ&amp;Aと塾講師マッチングをつなぎ、教室集客・AI活用・便利ツール・協賛収益まで含めた初期構想。</div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">01</div><div class="section-title">サービスコンセプト</div></div>
-    <div class="tbl-wrap"><table><tbody>
-      <tr><td>どんなサービスか</td><td>生徒や保護者が勉強・成績の悩みを投稿すると、登録している塾講師が回答する。回答を見て気に入った講師に、そのままマッチング依頼できる。</td></tr>
-      <tr><td>モデル</td><td>弁護士ドットコムを教育分野に応用。Q&amp;Aから専門家依頼へつなげる構造。</td></tr>
-      <tr><td>ターゲット</td><td>生徒・保護者、個人講師、塾・学習教室。</td></tr>
-      <tr><td>ブランド</td><td>学びのギルド。困ったときに頼れる講師が集まる場所。</td></tr>
-    </tbody></table></div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">02</div><div class="section-title">主な機能</div></div>
-    <div class="grid2">
-      <div class="card"><div class="card-title">Q&amp;A相談板</div><div class="b-item">匿名質問投稿</div><div class="b-item">AIタグ付け</div><div class="b-item">講師回答</div><div class="b-item">ベストアンサー・役に立った投票</div><div class="b-item">過去Q&amp;Aの検索とSEO資産化</div></div>
-      <div class="card"><div class="card-title">講師・教室検索</div><div class="b-item">科目・地域・評価・料金帯で絞り込み</div><div class="b-item">講師プロフィール</div><div class="b-item">所属教室表示</div><div class="b-item">問い合わせ・マッチング依頼</div></div>
-      <div class="card"><div class="card-title">教室ページ</div><div class="b-item">教室アカウント登録</div><div class="b-item">所属講師一覧</div><div class="b-item">回答ハイライト表示</div><div class="b-item">所属申請・承認制</div><div class="b-item">問い合わせ一括管理</div></div>
-      <div class="card"><div class="card-title">ランキング</div><div class="b-item">年間ランキング</div><div class="b-item">月間ランキング</div><div class="b-item">週間ランキング</div><div class="b-item">科目別ランキング</div><div class="b-item">都道府県フィルター</div></div>
+    <div class="hero-sub">弁護士ドットコムの教育版。勉強・成績の悩みQ&amp;Aと塾講師マッチングをつなぐプラットフォーム。Firebase × Vertex AI × Next.js で構築。</div>
+    <div class="hero-meta">
+      <div><div class="hero-meta-label">モデル</div><div class="hero-meta-val">弁護士ドットコム（教育版）</div></div>
+      <div><div class="hero-meta-label">技術スタック</div><div class="hero-meta-val">Firebase × Vertex AI × Next.js</div></div>
+      <div><div class="hero-meta-label">開発体制</div><div class="hero-meta-val">エンジニア2名 + PM</div></div>
+      <div><div class="hero-meta-label">AI開発ツール</div><div class="hero-meta-val">Cursor / Claude</div></div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-num">03</div><div class="section-title">AI活用機能</div></div>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>機能</th><th>概要</th><th>時期</th></tr></thead>
-      <tbody>
-        <tr><td>自動タグ付け</td><td>投稿本文をAIが解析し、科目・学年・難易度タグを自動付与する。</td><td><span class="badge b-must">初回</span></td></tr>
-        <tr><td>編集部コラム自動生成</td><td>SNS・ニュース・Google Trendsを収集し、教育関連コラムをAIで生成する。</td><td><span class="badge b-must">初回</span></td></tr>
-        <tr><td>SNS自動投稿</td><td>拡散価値の高い回答を選び、Xに自動投稿する。</td><td><span class="badge b-must">初回</span></td></tr>
-        <tr><td>SEO・構造化データ</td><td>タグと本文からSEOメタ情報を自動生成する。</td><td><span class="badge b-must">初回</span></td></tr>
-        <tr><td>類似Q&amp;Aレコメンド</td><td>タグ・内容をもとに関連質問を表示する。</td><td><span class="badge b-phase2">Phase2</span></td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">04</div><div class="section-title">便利ツール群</div></div>
-    <div class="grid2">
-      <div class="card"><div class="card-title">生徒向け</div><div class="b-item">単語テスト</div><div class="b-item">文法テスト</div><div class="b-item">暗記カード</div><div class="b-item">学習タイマー</div><div class="b-item">AI弱点分析</div></div>
-      <div class="card"><div class="card-title">講師向け</div><div class="b-item">簡単経理システム</div><div class="b-item">在庫管理</div><div class="b-item">授業スケジュール管理</div><div class="b-item">請求書・領収書発行</div><div class="b-item">売上レポート</div></div>
-    </div>
-    <div class="tip">ツールをプラットフォーム内に集めることで、継続利用と別枠課金の余地を作る。</div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">05</div><div class="section-title">収益モデル</div></div>
-    <div class="grid3">
-      <div class="plan"><div class="card-title">生徒プラン</div><div class="price">¥0 / ¥480</div><div class="b-item">無料は投稿・閲覧制限あり</div><div class="b-item">有料で質問・閲覧無制限</div></div>
-      <div class="plan featured"><div class="card-title">個人講師プラン</div><div class="price">¥0 / ¥480</div><div class="b-item">無料で回答・ランキング参加</div><div class="b-item">有料で問い合わせ受信無制限</div></div>
-      <div class="plan"><div class="card-title">教室プラン</div><div class="price">¥4,980〜</div><div class="b-item">所属講師数で段階課金</div><div class="b-item">問い合わせ一括管理</div></div>
-    </div>
-    <div class="card"><div class="card-title">教育協賛企業</div>一般広告ではなく、教育関連企業だけを対象にした協賛モデル。参考書メーカー、予備校、オンライン英会話、大学、EdTech企業などを想定。</div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">06</div><div class="section-title">開発体制と技術スタック</div></div>
-    <div class="tbl-wrap"><table><tbody>
-      <tr><td>フロントエンド</td><td>Next.js / React。画面UI、SEO対応。</td></tr>
-      <tr><td>データベース</td><td>Firebase Firestore。Q&amp;A、ユーザー、タグ、教室、講師を管理。</td></tr>
-      <tr><td>バックエンド</td><td>Cloud Functions。AIタグ付け、SNS自動投稿、バッチ処理。</td></tr>
-      <tr><td>AI</td><td>Vertex AI（Gemini）。タグ付け、コラム生成、SNS投稿文生成。</td></tr>
-      <tr><td>決済</td><td>Stripe。月額サブスク、都度課金。</td></tr>
-    </tbody></table></div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">07</div><div class="section-title">開発ロードマップ</div></div>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>フェーズ</th><th>期間</th><th>内容</th></tr></thead>
-      <tbody>
-        <tr><td>Phase 0</td><td>〜2週間</td><td>Firebase環境構築、DB設計、認証設計、AIタグ付け検証。</td></tr>
-        <tr><td>Phase 1</td><td>2〜3ヶ月</td><td>Q&amp;A投稿、回答、講師プロフィール、教室ページ、マッチング、AIタグ、コラム、X自動投稿。</td></tr>
-        <tr><td>Phase 2</td><td>+2ヶ月</td><td>チャット、有料プラン、決済、ツール群、Instagram投稿。</td></tr>
-        <tr><td>Phase 3</td><td>+3ヶ月〜</td><td>ツール追加、学習進捗、AI精度改善、協賛企業営業。</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-num">08</div><div class="section-title">確定済み方針と検討事項</div></div>
-    <div class="grid2">
-      <div class="card"><div class="card-title">確定済み</div><div class="b-item">投稿は匿名、問い合わせは実名</div><div class="b-item">評価は無料・有料で平等</div><div class="b-item">教室プランは所属講師数で課金</div><div class="b-item">協賛は教育関連企業に限定</div></div>
-      <div class="card"><div class="card-title">今後の検討</div><div class="b-item">タグマスタ設計</div><div class="b-item">全文検索の方針</div><div class="b-item">協賛企業の審査基準</div><div class="b-item">無料制限数の最終確定</div></div>
+  <!-- 1. サービス概要 -->
+  <div class="section" id="overview">
+    <div class="section-header"><div class="section-num">01</div><div class="section-title">サービス概要</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><td>コンセプト</td><td>生徒が勉強・成績の悩みを投稿 → 塾講師が回答 → マッチング依頼へつなぐQ&Aプラットフォーム</td></tr>
+          <tr><td>ターゲット生徒</td><td>勉強・受験に悩む中高生・保護者</td></tr>
+          <tr><td>ターゲット講師</td><td>個人フリーランス講師・塾所属講師・塾（教室）</td></tr>
+          <tr><td>投稿方式</td><td>投稿は<strong>匿名</strong> / 講師とのマッチング・問い合わせは<strong>実名</strong></td></tr>
+          <tr><td>収益モデル</td><td>フリーミアム（生徒・講師・教室の月額課金）＋ ツールプラン課金 ＋ 教育協賛企業からの協賛収益</td></tr>
+          <tr><td>評価方針</td><td>無料・有料に関わらず<strong>評価は完全平等</strong>。実力でランキングが決まる</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
+  <!-- 2. 登録アカウント構造 -->
+  <div class="section" id="structure">
+    <div class="section-header"><div class="section-num">02</div><div class="section-title">登録アカウントの構造（2層）</div></div>
+    <div class="section-desc">講師は「個人（フリーランス）」と「教室所属」の2パターンがある。教室アカウントと講師アカウントは別々に存在し、講師が教室に所属申請して承認される仕組み。</div>
+
+    <div class="two-col" style="margin-bottom:16px">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div class="card-title" style="color:var(--blue)">🏫 教室（塾）アカウント</div>
+        <div class="b-item good">教室名・所在地・特色・方針を掲載</div>
+        <div class="b-item good">所属講師の一覧を表示</div>
+        <div class="b-item good">所属講師の回答履歴を教室ページに集約</div>
+        <div class="b-item good">「この教室の先生はこんな教え方をします」というPRができる</div>
+        <div class="b-item good">問い合わせの窓口を教室が一元管理</div>
+        <div class="b-item good">有料登録制（料金は後述）</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div class="card-title" style="color:var(--accent)">👨‍🏫 講師アカウント</div>
+        <div class="b-item good">個人プロフィールを持つ</div>
+        <div class="b-item good">所属教室を検索して選択・紐付け可能</div>
+        <div class="b-item good">所属なし（フリー）でも登録可能</div>
+        <div class="b-item good">教室が未登録の場合は自由記載もOK</div>
+        <div class="b-item good">塾所属フラグと個人フリーフラグを両立可能</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📋 講師プロフィールの問い合わせボタンの表示パターン</div>
+      <div class="tbl-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>講師の状態</th><th>表示されるボタン</th><th>問い合わせの届き先</th></tr></thead>
+          <tbody>
+            <tr><td>塾所属のみ</td><td>「塾へ問い合わせる」のみ</td><td>教室の管理画面に集約</td></tr>
+            <tr><td>塾所属 ＋ 個人フリー設定あり</td><td>「塾へ問い合わせる」「先生に直接依頼する」の両方</td><td>それぞれに届く</td></tr>
+            <tr><td>個人フリーのみ</td><td>「先生に直接依頼する」のみ</td><td>講師個人に届く</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔄 教室への所属登録フロー</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+        <div style="background:var(--bg);border-radius:8px;padding:10px 14px;display:flex;gap:10px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px">1</div>
+          <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">講師がプロフィール編集画面で「教室を検索」</strong><br>教室名・地域で検索 → 一覧から選択して所属申請を送信</div>
+        </div>
+        <div style="background:var(--bg);border-radius:8px;padding:10px 14px;display:flex;gap:10px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px">2</div>
+          <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">教室側の管理者が承認</strong><br>承認制にすることで「無断で〇〇塾所属と名乗られる」トラブルを防止</div>
+        </div>
+        <div style="background:var(--bg);border-radius:8px;padding:10px 14px;display:flex;gap:10px;align-items:flex-start">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px">3</div>
+          <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">教室ページに講師が表示される</strong><br>講師の回答履歴も教室ページに集約。将来的に「この教室が登録されました。紐付けますか？」通知も検討</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 機能一覧 -->
+  <div class="section" id="features">
+    <div class="section-header"><div class="section-num">03</div><div class="section-title">機能一覧と優先度</div></div>
+    <div class="section-desc">MVP＝最初のリリース必須　／　フェーズ2＝軌道後に追加　／　将来検討＝中長期</div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">📝 コアQ&A機能</div>
+      <div class="tbl-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>機能</th><th>概要</th><th>優先度</th><th>担当</th></tr></thead>
+          <tbody>
+            <tr><td>相談投稿</td><td>科目・学年タグ付きでテキスト投稿。<strong>投稿は匿名</strong></td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（API）</td></tr>
+            <tr><td>AIによる自動タグ付け</td><td>投稿本文をVertex AI（Gemini）が解析。科目・学年・難易度を自動付与。「このタグで合ってますか？」とユーザーに確認ステップあり</td><td><span class="badge b-must">MVP</span></td><td>B（Cloud Functions）</td></tr>
+            <tr><td>講師による回答</td><td>コメント・補足回答。ベストアンサー選択・役に立った投票機能付き</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（API）</td></tr>
+            <tr><td>過去相談の閲覧・全文検索</td><td>蓄積Q&AがSEO資産になる。Algolia連携を検討</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（検索）</td></tr>
+            <tr><td>類似Q&Aレコメンド</td><td>タグ・内容をもとに関連質問を表示。回遊率・滞在時間UP</td><td><span class="badge b-phase2">フェーズ2</span></td><td>B（AI API）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">👨‍🏫 講師・教室・マッチング機能</div>
+      <div class="tbl-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>機能</th><th>概要</th><th>優先度</th><th>担当</th></tr></thead>
+          <tbody>
+            <tr><td>講師プロフィール・マイページ</td><td>経歴・対応科目・料金・自己PR。塾所属／フリーのフラグ設定</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（API）</td></tr>
+            <tr><td>教室（塾）ページ</td><td>教室情報・所属講師一覧・回答ハイライト・「この教室に問い合わせる」CTA</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（API）</td></tr>
+            <tr><td>教室への所属申請・承認フロー</td><td>講師が申請 → 教室管理者が承認。承認制でブランドを保護</td><td><span class="badge b-must">MVP</span></td><td>A+B 協働</td></tr>
+            <tr><td>講師検索・絞り込み</td><td>科目・評価・地域・料金帯で絞り込み</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（クエリ）</td></tr>
+            <tr><td>問い合わせ・マッチングフロー</td><td>依頼 → 承諾 → 契約。<strong>マッチング以降は実名</strong>。塾所属講師の問い合わせは教室に集約</td><td><span class="badge b-must">MVP</span></td><td>A+B 協働</td></tr>
+            <tr><td>評価・レビュー</td><td>星評価＋コメント。無料・有料に関わらず<strong>評価は完全平等</strong></td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（集計）</td></tr>
+            <tr><td>チャット・メッセージ</td><td>依頼前の事前相談。有料プラン限定</td><td><span class="badge b-phase2">フェーズ2</span></td><td>A（UI）B（WS）</td></tr>
+            <tr><td>授業料の一括見積もり依頼</td><td>複数講師に見積もりを一括送信</td><td><span class="badge b-phase2">フェーズ2</span></td><td>A+B 協働</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">🛠 ツール群（差別化ポイント・別枠課金）</div>
+      <div class="two-col">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text2);margin-bottom:8px">生徒向けツール</div>
+          <div class="tool-box"><div class="tool-name">📚 単語テストアプリ</div><div class="tool-desc">科目・単元別に出題。弱点を自動記録</div><div class="tool-tag tt-s">生徒向け</div></div>
+          <div class="tool-box"><div class="tool-name">✏️ 文法テストアプリ</div><div class="tool-desc">英語・国語の文法問題を自動生成</div><div class="tool-tag tt-s">生徒向け</div></div>
+          <div class="tool-box"><div class="tool-name">🗂 暗記カード（フラッシュカード）</div><div class="tool-desc">自分でカードを作成して繰り返し学習</div><div class="tool-tag tt-s">生徒向け</div></div>
+          <div class="tool-box"><div class="tool-name">⏱ 学習タイマー・記録</div><div class="tool-desc">勉強時間を記録してグラフで可視化</div><div class="tool-tag tt-s">生徒向け</div></div>
+          <div class="tool-box"><div class="tool-name">🤖 AI弱点分析レポート</div><div class="tool-desc">テスト結果からAIが弱点を分析・提案</div><div class="tool-tag tt-a">Pro限定</div></div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text2);margin-bottom:8px">講師向けツール</div>
+          <div class="tool-box"><div class="tool-name">💰 簡単経理システム</div><div class="tool-desc">授業料の収支管理・月次レポート</div><div class="tool-tag tt-t">講師向け</div></div>
+          <div class="tool-box"><div class="tool-name">📦 在庫管理システム</div><div class="tool-desc">教材・テキストの在庫を管理</div><div class="tool-tag tt-t">講師向け</div></div>
+          <div class="tool-box"><div class="tool-name">📅 授業スケジュール管理</div><div class="tool-desc">生徒ごとの授業日程を一覧管理</div><div class="tool-tag tt-t">講師向け</div></div>
+          <div class="tool-box"><div class="tool-name">🧾 請求書・領収書発行</div><div class="tool-desc">ワンクリックで請求書を生成・送付</div><div class="tool-tag tt-t">講師向け</div></div>
+          <div class="tool-box"><div class="tool-name">📊 売上レポート・分析</div><div class="tool-desc">月別・生徒別の売上を可視化</div><div class="tool-tag tt-a">Pro限定</div></div>
+        </div>
+      </div>
+      <div class="tip" style="margin-top:12px"><b>差別化ポイント：</b>ツールをプラットフォームに組み込むことで「ここを離れると不便」というスイッチングコストが生まれる。弁護士ドットコムにはない独自の強み。ツールを増やすほど収益の天井が上がる構造。</div>
+    </div>
+  </div>
+
+  <!-- 4. AI活用 -->
+  <div class="section" id="ai">
+    <div class="section-header"><div class="section-num">04</div><div class="section-title">AI活用機能（本サービスの核心）</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>機能</th><th>概要</th><th>優先度</th><th>担当</th></tr></thead>
+        <tbody>
+          <tr><td>投稿AIタグ付け</td><td>投稿本文をVertex AI（Gemini）で解析。科目・学年・単元・難易度・悩み種別を自動付与。ユーザー確認ステップあり。表記ゆれを防ぎSEO品質を最初から高く保つ</td><td><span class="badge b-must">MVP</span></td><td>B（Cloud Functions）</td></tr>
+          <tr><td>編集部コラム自動生成</td><td>SNS・ニュース・Google Trendsのトレンドを毎朝バッチ収集し、教育関連トピックをAIがコラム記事として生成。「編集部」名義で公開。AI生成と明示する</td><td><span class="badge b-must">MVP</span></td><td>B（バッチ処理）</td></tr>
+          <tr><td>SNS自動投稿（X）</td><td>AIが拡散スコアを判定し高スコアの回答のみXに自動投稿。全件投稿はしない。講師への事前同意が必要（利用規約に明記）</td><td><span class="badge b-must">MVP</span></td><td>B（X API連携）</td></tr>
+          <tr><td>講師へのシェア素材配布</td><td>回答後に投稿文・画像を自動生成し講師にメール・通知で送付。講師が自分のSNSで拡散するのを後押し。最も温度感の高い流入経路</td><td><span class="badge b-must">MVP</span></td><td>B（生成）A（通知UI）</td></tr>
+          <tr><td>SEOメタ情報・構造化データ</td><td>AIタグ＋本文からtitle・descriptionを自動生成。JSON-LDによる構造化データ出力でGoogle・AI検索への露出を高める</td><td><span class="badge b-must">MVP</span></td><td>B 主担当</td></tr>
+          <tr><td>タグ別ページ自動生成</td><td>「数学 二次方程式 高校生」などのURL自動生成。蓄積Q&AがSEO資産になる</td><td><span class="badge b-must">MVP</span></td><td>A（テンプレ）B（生成）</td></tr>
+          <tr><td>Instagram図解カード投稿</td><td>回答をAIが3行に要約しデザインテンプレに流し込み画像生成してInstagram投稿</td><td><span class="badge b-phase2">フェーズ2</span></td><td>B（画像生成）</td></tr>
+          <tr><td>SNSシェアボタン（転送機能）</td><td>Q&A回答ページ・コラム記事ページにX・LINE・Instagram・リンクコピーボタンを設置。OGP設定により見栄えの良いシェアカードが自動生成される。実装コストが低く拡散効果が高い</td><td><span class="badge b-must">MVP</span></td><td>A（UI）B（OGP設定）</td></tr>
+          <tr><td>AIコード自動生成での開発</td><td>Cursor等のAIエディタを活用。Firebase × AIはコード生成との相性が良く開発速度1.5〜2倍が期待できる</td><td><span class="badge b-pm">開発方針</span></td><td>A・B 両名</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5. 料金プラン -->
+  <div class="section" id="pricing">
+    <div class="section-header"><div class="section-num">05</div><div class="section-title">料金プラン</div></div>
+    <div class="section-desc">本体プランとツールプランの2層構造。本体を安く設定し、ツールで積み上げ収益を作る設計。評価は無料・有料に関わらず完全平等。</div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px">① 生徒プラン（本体）</div>
+    <div class="two-col" style="margin-bottom:20px">
+      <div class="plan p0">
+        <div class="plan-name">無料プラン</div>
+        <div class="plan-price">¥0</div>
+        <div class="plan-period">/ 月　ずっと無料</div>
+        <div class="plan-item o">質問投稿 <span class="plan-limit">1日3件まで</span></div>
+        <div class="plan-item o">回答閲覧 <span class="plan-limit">1日5件まで</span></div>
+        <div class="plan-item o">コラム記事の閲覧</div>
+        <div class="plan-item o">ツール（別途ツールプランで利用可）</div>
+        <div class="plan-item o">講師・塾への問い合わせ送信 ✦新</div>
+        <div class="plan-item o">マッチング依頼の送信 ✦新</div>
+        <div class="plan-item o">SNSシェアボタン ✦新</div>
+        <div class="plan-item x">質問・閲覧 無制限</div>
+      </div>
+      <div class="plan p2 featured">
+        <div class="plan-name">有料プラン ⭐</div>
+        <div class="plan-price">¥480</div>
+        <div class="plan-period">/ 月（年払い ¥3,800/年も設定）</div>
+        <div class="plan-item o">質問投稿 無制限</div>
+        <div class="plan-item o">回答閲覧 無制限</div>
+        <div class="plan-item o">コラム記事の閲覧</div>
+        <div class="plan-item o">ツール（別途ツールプランで利用可）</div>
+        <div class="plan-item o">講師へのダイレクトメッセージ</div>
+        <div class="plan-item o">マッチング依頼</div>
+      </div>
+    </div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px">② 個人講師プラン（本体）</div>
+    <div class="two-col" style="margin-bottom:8px">
+      <div class="plan p0">
+        <div class="plan-name">無料プラン</div>
+        <div class="plan-price">¥0</div>
+        <div class="plan-period">/ 月　ずっと無料</div>
+        <div class="plan-item o">プロフィール作成・公開</div>
+        <div class="plan-item o">Q&Aへの回答（無制限）</div>
+        <div class="plan-item o">ランキング・バッジ参加（平等）</div>
+        <div class="plan-item o">問い合わせ受信 <span class="plan-limit">月3件まで</span></div>
+        <div class="plan-item o">SNSシェアボタン ✦新</div>
+        <div class="plan-item x">問い合わせ無制限・SNS素材</div>
+      </div>
+      <div class="plan p2 featured">
+        <div class="plan-name">有料プラン ⭐</div>
+        <div class="plan-price">¥480</div>
+        <div class="plan-period">/ 月　本格的に集客したい人向け</div>
+        <div class="plan-item o">プロフィール作成・公開</div>
+        <div class="plan-item o">Q&Aへの回答（無制限）</div>
+        <div class="plan-item o">ランキング・バッジ参加（平等）</div>
+        <div class="plan-item o">問い合わせ・依頼の受信 無制限</div>
+        <div class="plan-item o">SNSシェア素材の自動配布</div>
+        <div class="plan-item o">便利ツール 1個無料 ✦新</div>
+        <div class="plan-item o">SNSシェアボタン ✦新</div>
+      </div>
+    </div>
+    <div class="tip tip-amber" style="margin-bottom:20px"><b>¥480の根拠：</b>塾所属講師は本体無料のため、個人フリーランス講師が「試しやすい」金額に設定。授業1件の収益と比べて圧倒的に安く、継続率が高くなる。ワンコイン以下で始められる。</div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px">③ 教室（塾）プラン（所属講師の登録人数で4段階）</div>
+    <div class="grid4" style="margin-bottom:8px">
+      <div class="plan p1">
+        <div class="plan-tag" style="color:var(--blue)">SMALL</div>
+        <div class="plan-name">スモール</div>
+        <div class="plan-price">¥4,980</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">教室ページ作成・公開</div>
+        <div class="plan-item o">所属講師登録 <span class="plan-limit">3名まで</span></div>
+        <div class="plan-item o">問い合わせ一括管理</div>
+        <div class="plan-item o">講師回答を教室ページに集約</div>
+        <div class="plan-item o">SNS素材の自動配布 ✦新</div>
+        <div class="plan-item o">月次レポート ✦新</div>
+        <div class="plan-item o">教室運営ツール <span class="plan-limit">2個まで</span> ✦新</div>
+      </div>
+      <div class="plan p2 featured">
+        <div class="plan-tag" style="color:var(--accent)">STANDARD ★人気</div>
+        <div class="plan-name">スタンダード</div>
+        <div class="plan-price">¥9,800</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">教室ページ（優先表示）</div>
+        <div class="plan-item o">所属講師登録 <span class="plan-limit">10名まで</span></div>
+        <div class="plan-item o">問い合わせ一括管理</div>
+        <div class="plan-item o">講師回答を教室ページに集約</div>
+        <div class="plan-item o">SNS素材の自動配布</div>
+        <div class="plan-item o">月次レポート</div>
+        <div class="plan-item o">教室運営ツール <span class="plan-limit">5個まで</span> ✦新</div>
+      </div>
+      <div class="plan p3">
+        <div class="plan-tag" style="color:var(--purple)">LARGE</div>
+        <div class="plan-name">ラージ</div>
+        <div class="plan-price">¥19,800</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">教室ページ（最優先表示）</div>
+        <div class="plan-item o">所属講師登録 <span class="plan-limit">30名まで</span></div>
+        <div class="plan-item o">問い合わせ一括管理</div>
+        <div class="plan-item o">講師回答を教室ページに集約</div>
+        <div class="plan-item o">SNS素材の自動配布</div>
+        <div class="plan-item o">月次レポート＋競合比較</div>
+        <div class="plan-item o">教室運営ツール 無制限 ✦新</div>
+        <div class="plan-item o">タイアップコラム（月1本）</div>
+      </div>
+      <div class="plan p4">
+        <div class="plan-tag" style="color:var(--amber)">ENTERPRISE</div>
+        <div class="plan-name">エンタープライズ</div>
+        <div class="plan-price" style="font-size:18px">要相談</div>
+        <div class="plan-period">大手塾チェーン向け</div>
+        <div class="plan-item o">複数教室を一括管理</div>
+        <div class="plan-item o">所属講師登録 <span class="plan-limit">無制限</span></div>
+        <div class="plan-item o">全機能利用可能</div>
+        <div class="plan-item o">教室運営ツール 無制限</div>
+        <div class="plan-item o">専任サポート担当</div>
+        <div class="plan-item o">カスタムレポート</div>
+      </div>
+    </div>
+    <div class="tip" style="margin-bottom:20px"><b>1名あたりのコスト：</b>スモール¥4,980÷3名＝¥1,660 / スタンダード¥9,800÷10名＝¥980 / ラージ¥19,800÷30名＝¥660。人数が増えるほど割安になるので大きい塾ほど上位プランに移行しやすい。</div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px">④ ツールプラン（生徒・講師 共通・別枠）</div>
+    <div class="grid4" style="margin-bottom:8px">
+      <div class="plan p0">
+        <div class="plan-tag" style="color:#888">FREE</div>
+        <div class="plan-name">無料</div>
+        <div class="plan-price">¥0</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">ツール利用 <span class="plan-limit">1個まで</span></div>
+        <div class="plan-item o">各ツールの基本機能のみ</div>
+        <div class="plan-item x">データ保存・履歴</div>
+        <div class="plan-item x">上位機能・AI分析</div>
+      </div>
+      <div class="plan p1">
+        <div class="plan-tag" style="color:var(--blue)">LIGHT</div>
+        <div class="plan-name">ライト</div>
+        <div class="plan-price">¥380</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">ツール利用 <span class="plan-limit">3個まで</span></div>
+        <div class="plan-item o">各ツールの基本機能</div>
+        <div class="plan-item o">データ保存・履歴（30日分）</div>
+        <div class="plan-item x">上位機能・AI分析</div>
+      </div>
+      <div class="plan p2 featured">
+        <div class="plan-tag" style="color:var(--accent)">STANDARD ★人気</div>
+        <div class="plan-name">スタンダード</div>
+        <div class="plan-price">¥780</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">ツール利用 <span class="plan-limit">7個まで</span></div>
+        <div class="plan-item o">各ツールの全機能</div>
+        <div class="plan-item o">データ保存・履歴（無制限）</div>
+        <div class="plan-item o">AI分析（一部）</div>
+      </div>
+      <div class="plan p3">
+        <div class="plan-tag" style="color:var(--purple)">PRO</div>
+        <div class="plan-name">プロ</div>
+        <div class="plan-price">¥1,980</div>
+        <div class="plan-period">/ 月</div>
+        <div class="plan-item o">ツール利用 <span class="plan-limit">無制限</span></div>
+        <div class="plan-item o">各ツールの全機能</div>
+        <div class="plan-item o">データ保存・履歴（無制限）</div>
+        <div class="plan-item o">AI分析・レポート（全機能）</div>
+        <div class="plan-item o">新ツール優先アクセス</div>
+      </div>
+    </div>
+    <div class="tip"><b>新ツール優先アクセスの効果：</b>ツールを増やすたびにProプランの価値が上がる。「新しいツールが出るたびに追加料金なしで使える」安心感がProへのアップグレードを促す。ツール数が増えるほど収益の天井が上がる構造。</div>
+  </div>
+
+  <!-- 6. 講師ランキング -->
+  <div class="section" id="ranking">
+    <div class="section-header"><div class="section-num">06</div><div class="section-title">講師ランキング設計（やる気になる仕組み）</div></div>
+    <div class="section-desc">単純な評価点順だとトップが固定されモチベが下がる。複数の切り口でランキングを設けて「誰でも1位を狙える」設計にする。評価は無料・有料に関わらず完全平等。</div>
+    <div class="rank-card"><div class="rank-icon">🏅</div><div><div class="rank-title">年間ランキング ✦新</div><div class="rank-desc">1月1日〜12月31日でリセット。「2025年 年間1位」バッジがプロフに永久表示される。講師にとって最も権威ある称号。SNSで自慢したくなる→拡散→認知拡大の好循環。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">🏆</div><div><div class="rank-title">月間ランキング（メイン）</div><div class="rank-desc">回答数・ベストアンサー数・評価点・マッチング成立数を総合スコア化。毎月1日にリセット。「今月頑張れば上位に入れる」という継続的なモチベになる。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">🔥</div><div><div class="rank-title">週間ランキング ✦新</div><div class="rank-desc">毎週月曜にリセット。新人でも「今週1位」を取るチャンスがある。登録直後の講師が最初に目指せる目標になる。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">📚</div><div><div class="rank-title">科目別ランキング</div><div class="rank-desc">数学・英語・理科など科目ごとにランキング。ニッチな科目の講師でも1位になれる設計。「数学ランキング1位」という称号が講師のPRになる。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">📍</div><div><div class="rank-title">都道府県フィルター ✦新</div><div class="rank-desc">全国・都道府県・市区町村で絞り込み可能。「徳島県の数学ランキング1位」という地域密着型の称号が生まれる。地元で1位は塾・講師にとって強いPRになる。講師登録時から都道府県を必須項目にしておくことで後からの改修が不要。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">🔥</div><div><div class="rank-title">今月の急上昇ランキング</div><div class="rank-desc">先月比でスコアの伸びが大きい講師を表示。登録したばかりの新人講師でも露出のチャンスがある。「頑張れば目立てる」という動機が登録・定着の鍵。</div></div></div>
+    <div class="rank-card"><div class="rank-icon">⭐</div><div><div class="rank-title">バッジ・称号システム</div><div class="rank-desc">達成条件に応じたバッジをプロフに表示。コレクション感覚で継続を促す。次のバッジまでの進捗バーを表示。バッジ取得時にSNSシェア用画像を自動生成。<br>例：🥇ベストアンサー10回達成 / 💬回答100件達成 / 📈連続30日回答 / 🎯マッチング成立5件 / 🔬理科マスター</div></div></div>
+  </div>
+
+  <!-- 7. 収益モデル -->
+  <div class="section" id="revenue">
+    <div class="section-header"><div class="section-num">07</div><div class="section-title">収益モデル</div></div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">🤝 教育協賛企業モデル（「広告」ではなく「教育パートナー」）</div>
+      <div class="section-desc" style="margin-bottom:12px">一般的なバナー広告ではなく教育関連企業限定の協賛モデル。ブランドイメージを守りながら高単価の収益化が可能。</div>
+      <div class="tbl-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>プラン</th><th>月額単価</th><th>掲載内容</th><th>想定企業</th></tr></thead>
+          <tbody>
+            <tr><td>🥇 プラチナ協賛</td><td>¥300,000〜</td><td>トップページバナー・専用ページ・タイアップコラム・SNS投稿・メルマガ・月次レポート</td><td>大手予備校・参考書メーカー・大学</td></tr>
+            <tr><td>🥈 ゴールド協賛</td><td>¥80,000〜150,000</td><td>科目別ページバナー・専用ページ・コラム内紹介（月2回）・月次レポート</td><td>EdTech企業・オンライン英会話・文具</td></tr>
+            <tr><td>🥉 シルバー協賛</td><td>¥20,000〜50,000</td><td>特定ページへのロゴ掲載・協賛企業一覧ページ掲載・月次レポート</td><td>地域の塾・中小の教育サービス</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tip tip-amber" style="margin-top:12px"><b>注意：</b>協賛収益はPVが積み上がるまで取れない。最初の1年はユーザー課金で運営を支えながらPVを積み上げる。月間1万PVは「生徒200〜500人が登録し、Google検索から1日30〜100人が流入している状態」のイメージ。</div>
+    </div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:10px">フェーズ別 現実的な収益見通し</div>
+    <div class="grid3" style="margin-bottom:8px">
+      <div class="phase-card ph0"><div class="phase-label">PHASE 0〜1</div><div class="phase-period">開始〜6ヶ月</div><div class="phase-num">¥10〜30万</div><div class="phase-sub">/ 月</div><div class="phase-item">生徒30〜50人・講師10〜20人</div><div class="phase-item">塾5〜10件（主にスモール）</div><div class="phase-item">協賛収益はゼロ</div></div>
+      <div class="phase-card ph1"><div class="phase-label">PHASE 2</div><div class="phase-period">6〜18ヶ月</div><div class="phase-num">¥50〜100万</div><div class="phase-sub">/ 月</div><div class="phase-item">生徒200〜500人・講師50〜100人</div><div class="phase-item">塾20〜30件（スタンダード中心）</div><div class="phase-item">月間PV 1〜5万・シルバー協賛</div></div>
+      <div class="phase-card ph2"><div class="phase-label">PHASE 3</div><div class="phase-period">18ヶ月〜</div><div class="phase-num">¥150〜300万</div><div class="phase-sub">/ 月</div><div class="phase-item">生徒1,000〜5,000人・講師200〜1,000人</div><div class="phase-item">塾50件以上・エンタープライズ</div><div class="phase-item">月間PV 5〜20万・ゴールド協賛</div></div>
+    </div>
+  </div>
+
+  <!-- 8. ロードマップ -->
+  <div class="section" id="roadmap">
+    <div class="section-header"><div class="section-num">08</div><div class="section-title">開発ロードマップ（案）</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>フェーズ</th><th>期間（目安）</th><th>目標</th><th>主な内容</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 0　準備</td><td>〜2週間</td><td>内部のみ</td><td>Firebase環境構築・DB設計（教室/講師2層構造）・認証設計・AIタグ付けPoC・料金プラン確定</td></tr>
+          <tr><td>Phase 1　MVP</td><td>2〜3ヶ月</td><td>クローズドβ</td><td>Q&A投稿・回答・講師プロフ・教室ページ・所属申請フロー・検索・マッチング・AIタグ・コラム自動生成・X自動投稿</td></tr>
+          <tr><td>Phase 2　成長</td><td>+2ヶ月</td><td>正式公開</td><td>チャット・見積もり依頼・有料プラン・決済（Stripe）・ツール群リリース・Instagram投稿・講師集客ページ</td></tr>
+          <tr><td>Phase 3　差別化</td><td>+3ヶ月〜</td><td>継続改善</td><td>ツール追加・学習進捗・TikTok動画・AI精度改善・レコメンドエンジン・大手協賛企業への営業・エンタープライズ展開</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 9. エンジニア役割分担 -->
+  <div class="section">
+    <div class="section-header"><div class="section-num">09</div><div class="section-title">エンジニア役割分担</div></div>
+    <div class="two-col">
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div class="card-title" style="color:var(--blue)">エンジニアA　フロントエンド</div>
+        <div class="plan-item o">Next.js / React で全画面UI実装</div>
+        <div class="plan-item o">Firebase SDK をフロントから直接呼ぶ</div>
+        <div class="plan-item o">Q&A投稿・回答フロー</div>
+        <div class="plan-item o">講師プロフ・教室ページUI</div>
+        <div class="plan-item o">マッチングUI・管理者画面UI</div>
+        <div class="plan-item o">Cursor でコンポーネントを自動生成</div>
+        <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+          <span class="badge b-must">Next.js</span><span class="badge b-must">Firebase SDK</span><span class="badge b-must">Tailwind CSS</span><span class="badge b-must">Cursor</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--purple)">
+        <div class="card-title" style="color:var(--purple)">エンジニアB　バックエンド・AI</div>
+        <div class="plan-item o">Cloud Functions でサーバー処理</div>
+        <div class="plan-item o">Firestore DB設計・セキュリティルール</div>
+        <div class="plan-item o">Vertex AI（Gemini）でタグ付け・生成</div>
+        <div class="plan-item o">SNS自動投稿バッチ処理</div>
+        <div class="plan-item o">通知・検索・決済連携（Stripe）</div>
+        <div class="plan-item o">Cursor でCloud Functionsを自動生成</div>
+        <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+          <span class="badge b-phase2">Cloud Functions</span><span class="badge b-phase2">Vertex AI</span><span class="badge b-phase2">Firestore</span><span class="badge b-phase2">Cursor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. PM確認事項 -->
+  <div class="section" id="pm">
+    <div class="section-header"><div class="section-num">10</div><div class="section-title">PMが先に決めること（エンジニアが動く前に）</div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-done">✅ 確定</span></div><div><div class="pm-title">匿名・実名の運用方針</div><div class="pm-desc">投稿は匿名 / 講師とのマッチング・問い合わせは実名。DB設計に直結するため確定。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-done">✅ 確定</span></div><div><div class="pm-title">フリーミアムの線引き</div><div class="pm-desc">生徒：質問1日3件・閲覧1日5件が無料上限。メッセージ・マッチングは有料（¥480/月）。個人講師：問い合わせ月3件まで無料、無制限は¥480/月。塾所属講師は本体無料。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-done">✅ 確定</span></div><div><div class="pm-title">評価の平等方針</div><div class="pm-desc">無料・有料に関わらずランキング・評価は完全平等。実力でランキングが決まる設計。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-done">✅ 確定</span></div><div><div class="pm-title">教室・講師の2層構造</div><div class="pm-desc">教室アカウントと講師アカウントは別々に存在。講師が申請→教室が承認。塾所属講師の問い合わせは教室に集約。個人フリー設定との併用も可能。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-done">✅ 確定</span></div><div><div class="pm-title">ツールプランは本体と別枠</div><div class="pm-desc">本体プラン（登録・マッチング）とツールプラン（経理・テスト等）は完全に別課金。ツール数で4段階（無料・¥380・¥780・¥1,980）。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">SNS投稿への講師同意</div><div class="pm-desc">利用規約に「回答内容はSNSで紹介する場合があります」を追記。開発前に確定させること。後から追加すると既存講師への再同意が必要になる。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">タグのマスタ設計</div><div class="pm-desc">科目・学年・単元・難易度の階層をPMが定義。AIへのプロンプトとDBに直結するため、エンジニアが動く前に階層設計を確定させること。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-pm">要決定</span></div><div><div class="pm-title">AI生成コンテンツの表示方針</div><div class="pm-desc">コラム記事に「AIが生成し編集部がチェック」と明示するか。SEO・信頼性の観点で明示を推奨。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-later">確認</span></div><div><div class="pm-title">全文検索の方針</div><div class="pm-desc">FirestoreはQ&A全文検索が苦手。Algoliaなど別サービス連携を検討するかエンジニアBと要確認。コストと精度のトレードオフがある。</div></div></div>
+    <div class="pm-item"><div class="pm-badge"><span class="badge b-later">確認</span></div><div><div class="pm-title">協賛企業の審査基準</div><div class="pm-desc">教育と無関係な企業や不適切な商材は断る基準を作る。サービスの品質・ブランドイメージを長期的に守るための設計。</div></div></div>
+  </div>
+
+  <!-- 11. 技術スタック -->
+  <div class="section" id="stack">
+    <div class="section-header"><div class="section-num">11</div><div class="section-title">技術スタック</div></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>カテゴリ</th><th>採用技術</th><th>用途・備考</th></tr></thead>
+        <tbody>
+          <tr><td>フロントエンド</td><td>Next.js / React</td><td>全画面UI。SSR/SSGによるSEO対応</td></tr>
+          <tr><td>スタイリング</td><td>Tailwind CSS</td><td>UIコンポーネントの高速実装</td></tr>
+          <tr><td>認証</td><td>Firebase Authentication</td><td>メール・Google連携。生徒/講師/教室/管理者のロール管理</td></tr>
+          <tr><td>データベース</td><td>Firestore</td><td>Q&A・ユーザー・タグ・教室・講師のリアルタイムDB</td></tr>
+          <tr><td>バックエンド処理</td><td>Cloud Functions</td><td>AIタグ付け・SNS自動投稿・バッチ処理・通知・承認フロー</td></tr>
+          <tr><td>ファイル保存</td><td>Cloud Storage</td><td>画像・添付ファイル</td></tr>
+          <tr><td>ホスティング</td><td>Firebase Hosting</td><td>CDN・SSL自動対応</td></tr>
+          <tr><td>AI</td><td>Vertex AI（Gemini）</td><td>タグ付け・コラム生成・SNS投稿文生成</td></tr>
+          <tr><td>AI開発補助</td><td>Cursor / Claude</td><td>コード自動生成で開発速度を向上</td></tr>
+          <tr><td>全文検索</td><td>Algolia（検討）</td><td>Q&A過去相談の全文検索。Firebase単体では対応困難</td></tr>
+          <tr><td>プッシュ通知</td><td>FCM（Firebase Cloud Messaging）</td><td>回答・依頼・承認時の通知</td></tr>
+          <tr><td>SNS連携</td><td>X API / Instagram API</td><td>自動投稿・シェア素材配布</td></tr>
+          <tr><td>決済（フェーズ2）</td><td>Stripe</td><td>月額サブスク・都度課金</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
-<footer>EduConnect 企画資料 Ver1 — 初期構想・フル機能版</footer>
+
+<footer>
+  <div style="font-family:'DM Serif Display',serif;font-size:16px;color:var(--accent);margin-bottom:8px">EduConnect</div>
+  <div>EduConnect 企画資料 Ver1 — 完成形・フル構想版</div>
+</footer>
 </body>
 </html>

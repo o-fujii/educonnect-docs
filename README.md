@@ -2,19 +2,17 @@
 
 EduConnectの企画資料共有用リポジトリです。
 
-## 公開ページ
+## ページ構成
 
-- トップページ: https://o-fujii.github.io/educonnect-docs/
-- Ver0: https://o-fujii.github.io/educonnect-docs/ver0/
-- Ver1: https://o-fujii.github.io/educonnect-docs/ver1/
-- Ver2: https://o-fujii.github.io/educonnect-docs/ver2/
-- 比較ページ: https://o-fujii.github.io/educonnect-docs/versions.html
+- トップページ：/
+- Ver1：/ver1/
+- Ver2：/ver2/
+- 比較ページ：/versions.html
 
 ## バージョン説明
 
-- Ver0：最初の原案・詳細企画版
-- Ver1：初期構想・フル機能版
-- Ver2：スモールスタート・超MVP版
+- Ver1：完成形・フル構想版
+- Ver2：超MVP・スモールスタート版
 
 ## 運用ルール
 
