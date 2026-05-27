@@ -5,6 +5,7 @@ EduConnectの企画資料共有用リポジトリです。
 ## 共有URL一覧
 
 - URL一覧ドキュメント：`URLS.md`
+- Googleドキュメント版URL一覧：https://docs.google.com/document/d/1lmYsNPfjHV9MkwPpAaTgdnnk_PRINNOaLO6PGoiMrO8/edit?usp=drivesdk
 - トップページ：https://o-fujii.github.io/educonnect-docs/
 - Ver1：https://o-fujii.github.io/educonnect-docs/ver1/
 - Ver2：https://o-fujii.github.io/educonnect-docs/ver2/

@@ -4,6 +4,7 @@
 
 ## まず共有するURL
 
+- Googleドキュメント版URL一覧: https://docs.google.com/document/d/1lmYsNPfjHV9MkwPpAaTgdnnk_PRINNOaLO6PGoiMrO8/edit?usp=drivesdk
 - トップページ: https://o-fujii.github.io/educonnect-docs/
 - 現在の推奨版 Ver2: https://o-fujii.github.io/educonnect-docs/ver2/
 - 比較ページ: https://o-fujii.github.io/educonnect-docs/versions.html
@@ -20,6 +21,7 @@
 
 - GitHubリポジトリ: https://github.com/o-fujii/educonnect-docs
 - GitHub Pagesトップ: https://o-fujii.github.io/educonnect-docs/
+- Googleドキュメント版URL一覧: https://docs.google.com/document/d/1lmYsNPfjHV9MkwPpAaTgdnnk_PRINNOaLO6PGoiMrO8/edit?usp=drivesdk
 
 ## 補足
 
