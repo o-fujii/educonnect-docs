@@ -4,10 +4,10 @@ EduConnectの企画資料共有用リポジトリです。
 
 ## 公開ページ
 
-- トップページ: GitHub Pages URL
-- Ver1: GitHub Pages URL/ver1/
-- Ver2: GitHub Pages URL/ver2/
-- 比較ページ: GitHub Pages URL/versions.html
+- トップページ: https://o-fujii.github.io/educonnect-docs/
+- Ver1: https://o-fujii.github.io/educonnect-docs/ver1/
+- Ver2: https://o-fujii.github.io/educonnect-docs/ver2/
+- 比較ページ: https://o-fujii.github.io/educonnect-docs/versions.html
 
 ## バージョン説明
 
